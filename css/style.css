@@ -1,0 +1,184 @@
+:root {
+    /* Primary colors */
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+
+    /* Neutral colors */
+    --main-bg: hsl(217, 54%, 11%);
+    --card-bg: hsl(216, 50%, 16%);
+    --line: hsl(215, 32%, 27%);
+    --white: hsl(0, 0%, 100%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-bg);
+    font-size: 1.8rem;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+}
+
+/* Card */
+
+.card {
+    width: 400px;
+    padding: 3rem 3rem 3.5rem;
+    background-color: var(--card-bg);
+    border-radius: 2rem;
+}
+
+/* Card image */
+
+.card-image {
+    position: relative;
+    height: 340px;
+    margin-bottom: 3rem;
+}
+
+.card-image img {
+    max-width: 100%;
+    border-radius: 1rem;
+}
+
+/* Image overlay */
+
+.image-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    background-color: hsl(178, 100%, 50%, 50%);
+    opacity: 0;
+    border-radius: 1rem;
+    transition: opacity 0.3s ease-in;
+    cursor: pointer;
+}
+
+.image-overlay:hover {
+    opacity: 1;
+}
+
+.image-overlay img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Card info */
+
+.card-info h1 {
+    color: var(--white);
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+    transition: color 0.3s ease-in;
+    cursor: pointer;
+}
+
+.card-info h1:hover {
+    color: var(--cyan);
+}
+
+.card-info p {
+    color: var(--soft-blue);
+    margin-bottom: 3.5rem;
+}
+
+/* Card price */
+
+.card-price {
+    border-bottom: 2px solid var(--line);
+}
+
+.card-price ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin-bottom: 3rem;
+}
+
+.card-price ul li {
+    display: flex;
+    color: var(--soft-blue);
+}
+
+.card-price ul li:first-child {
+    color: var(--cyan);
+}
+
+.card-price ul li img {
+    margin-right: 1rem;
+}
+
+/* Card author */
+
+.card-author {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.card-author img {
+    width: 40px;
+    border: 2px solid var(--white);
+    border-radius: 50%;
+    margin-right: 2rem;
+}
+
+.card-author p {
+    color: var(--white);
+    transition: color 0.3s ease-in;
+    cursor: pointer;
+}
+
+.card-author p:hover {
+    color: var(--cyan);
+}
+
+.card-author p span {
+    color: var(--soft-blue);
+}
+
+/* Attribution */
+
+.attribution {
+    margin-top: 3rem;
+    font-size: 1.4rem;
+}
+
+/* Media queries */
+
+@media screen and (max-width: 576px) {
+    body {
+        font-size: 1.4rem;
+    }
+
+    .card {
+        width: 300px;
+    }
+
+    .card-image {
+        height: 240px;
+    }
+
+    .attribution {
+        font-size: 1.2rem;
+    }
+}
